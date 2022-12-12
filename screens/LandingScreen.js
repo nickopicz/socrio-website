@@ -1,14 +1,20 @@
-import React from "react";
-import { View, Text, Image } from "react-native";
+import React, { useEffect, useRef } from "react";
+import { View, Text, Image, ScrollView } from "react-native";
 import { Colors, Dim } from "../Constants";
 import { useFonts } from "expo-font";
 import * as Linking from "expo-linking";
 import { LinearGradient } from "expo-linear-gradient";
-
+import Lottie from "lottie-react-native";
 import CustomText from "../components/common/Text";
 import { RoundedButton } from "../components/common/Button";
 
 export const LandingPage = ({ navigation }) => {
+  const scrollAnim = useRef(null);
+
+  //   useEffect(() => {
+  //     scrollAnim.current.play();
+  //   }, []);
+
   function handlePress() {
     Linking.openURL(
       "https://docs.google.com/forms/d/e/1FAIpQLSe4Szo17_R3TWXCnpAtdYN2cnGpE_t4gCjgpWluKWBbX1UeMw/viewform?usp=sf_link"
@@ -17,8 +23,8 @@ export const LandingPage = ({ navigation }) => {
   return (
     <View
       style={{
-        width: Dim.width,
         height: Dim.height,
+        width: Dim.height,
         alignItems: "center",
         flexDirection: "row",
       }}
@@ -90,6 +96,7 @@ export const LandingPage = ({ navigation }) => {
             </CustomText>
           </RoundedButton>
         </View>
+
         <Image
           source={require("../assets/app_store_apple.jpg")}
           resizeMethod="auto"
