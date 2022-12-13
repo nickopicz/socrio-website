@@ -51,19 +51,21 @@ export const LandingPage = ({ navigation }) => {
           >
             <View
               style={{
-                padding: 20,
+                alignItems: "center",
+                justifyContent: "center",
+                height: Dim.height * 0.15,
+                width: Dim.width * 0.25,
               }}
             >
-              <Image
-                source={require("../assets/socrio_large_logo.jpg")}
-                resizeMethod="auto"
+              <CustomText
                 style={{
-                  height: Dim.height * 0.25,
-                  width: Dim.width * 0.5,
-                  opacity: 1,
-                  borderRadius: 20,
+                  position: "relative",
+                  fontSize: 80,
                 }}
-              />
+                aegean
+              >
+                socrio
+              </CustomText>
             </View>
             <View
               style={{
