@@ -128,12 +128,12 @@ export const LandingPage = ({ navigation }) => {
             />
             {/* </View> */}
             <View
-              style={{ alignItems: "center", paddingTop: Dim.height * 0.4 }}
+              style={{ alignItems: "center", paddingTop: Dim.height * 0.5 }}
             >
               <CardHolder
-                title={"Have your voice heard"}
+                title={" \nMake friends"}
                 textContent={
-                  "\n Become a voice in your community and meet interesting people! \n \n"
+                  "\n Become a voice in your city, county, or state... and listen to interesting people! \n \n"
                 }
               />
             </View>
