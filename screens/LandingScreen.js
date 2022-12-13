@@ -16,15 +16,15 @@ export const LandingPage = ({ navigation }) => {
     );
   }
   return (
-    <View style={{ height: Dim.height * 2, width: Dim.width }}>
+    <View style={{ height: Dim.height * 2.3, width: Dim.width }}>
       <ImageBackground
         source={require("../assets/stars.gif")}
         resizeMode="repeat"
-        style={{ height: Dim.height * 2, width: Dim.width }}
+        style={{ height: Dim.height * 2.3, width: Dim.width }}
       >
         <View
           style={{
-            height: Dim.height * 2,
+            height: Dim.height * 2.3,
             width: Dim.width,
             alignItems: "center",
             flexDirection: "row",
@@ -34,7 +34,7 @@ export const LandingPage = ({ navigation }) => {
             colors={[Colors.aegean, Colors.black]}
             style={{
               width: Dim.width * 0.25,
-              height: Dim.height * 2,
+              height: Dim.height * 2.3,
               opacity: 0.7,
             }}
             start={{ x: 0, y: 1 }}
@@ -44,7 +44,7 @@ export const LandingPage = ({ navigation }) => {
             style={{
               alignItems: "center",
               width: Dim.width * 0.5,
-              height: Dim.height * 2,
+              height: Dim.height * 2.3,
               backgroundColor: Colors.black,
               opacity: 1,
             }}
@@ -138,11 +138,19 @@ export const LandingPage = ({ navigation }) => {
               />
             </View>
             <View
-              style={{
-                alignSelf: "center",
-                paddingTop: Dim.height * 0.1,
-                paddingBottom: Dim.height * 0.05,
-              }}
+              style={
+                Dim.height >= Dim.width
+                  ? {
+                      alignSelf: "center",
+                      paddingTop: Dim.height * 0.1,
+                      paddingBottom: Dim.height * 0.05,
+                    }
+                  : {
+                      alignSelf: "center",
+                      paddingTop: Dim.height * 0.5,
+                      paddingBottom: Dim.height * 0.05,
+                    }
+              }
             >
               <CustomText p2 led style={{ textAlign: "center" }}>
                 email: nickopicz@gmail.com || phone: 908-410-7335
@@ -152,7 +160,7 @@ export const LandingPage = ({ navigation }) => {
           <LinearGradient
             style={{
               width: Dim.width * 0.25,
-              height: Dim.height * 2,
+              height: Dim.height * 2.3,
               opacity: 0.7,
             }}
             colors={[Colors.aegean, Colors.black]}
