@@ -10,12 +10,6 @@ import { RoundedButton } from "../components/common/Button";
 import { CardHolder } from "../components/Card";
 
 export const LandingPage = ({ navigation }) => {
-  const scrollAnim = useRef(null);
-
-  //   useEffect(() => {
-  //     scrollAnim.current.play();
-  //   }, []);
-
   function handlePress() {
     Linking.openURL(
       "https://docs.google.com/forms/d/e/1FAIpQLSe4Szo17_R3TWXCnpAtdYN2cnGpE_t4gCjgpWluKWBbX1UeMw/viewform?usp=sf_link"
@@ -79,16 +73,29 @@ export const LandingPage = ({ navigation }) => {
             >
               <RoundedButton
                 small
-                style={{
-                  height: Dim.height * 0.075,
-                  width: Dim.width * 0.125,
-                  shadowColor: Colors.white,
-                  shadowOffset: {
-                    width: 0,
-                    height: 7,
-                  },
-                  shadowOpacity: 0.1,
-                }}
+                style={
+                  Dim.width < Dim.height
+                    ? {
+                        height: Dim.height * 0.075,
+                        width: Dim.width * 0.3,
+                        shadowColor: Colors.white,
+                        shadowOffset: {
+                          width: 0,
+                          height: 7,
+                        },
+                        shadowOpacity: 0.1,
+                      }
+                    : {
+                        height: Dim.height * 0.075,
+                        width: Dim.width * 0.125,
+                        shadowColor: Colors.white,
+                        shadowOffset: {
+                          width: 0,
+                          height: 7,
+                        },
+                        shadowOpacity: 0.1,
+                      }
+                }
                 onPress={() => handlePress()}
               >
                 <CustomText black h4 style={{ position: "relative" }}>
