@@ -153,7 +153,7 @@ export const LandingPage = ({ navigation }) => {
               }
             >
               <CustomText p2 led style={{ textAlign: "center" }}>
-                email: nickopicz@gmail.com || phone: 908-410-7335
+                email: info@socrio.net
               </CustomText>
             </View>
           </View>
