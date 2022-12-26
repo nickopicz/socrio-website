@@ -6,7 +6,7 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
-    "privacy" :"public",
+    "privacy" : "public",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -28,7 +28,8 @@
       }
     },
     "web": {
-      "favicon": "./assets/mini_icon.png"
+      "favicon": "./assets/mini_icon.png",
+      "backgroundColor": "#000000"
     }
   }
 }
