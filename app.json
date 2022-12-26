@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "socrio_web",
-    "slug": "socrio_web",
+    "name": "socrio",
+    "slug": "socrio",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
