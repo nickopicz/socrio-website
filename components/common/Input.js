@@ -25,11 +25,11 @@ import { Feather as Icon } from "@expo/vector-icons";
 export const CustomInput = React.forwardRef((props, ref) => {
   let width = undefined;
   if (props.small) {
-    width = Dim.width * 0.4;
+    width = "40%";
   } else if (props.medium) {
-    width = Dim.width * 0.6;
+    width = "60%";
   } else if (props.large) {
-    width = Dim.width * 0.8;
+    width = "80%";
   }
   const styles = StyleSheet.create({
     container: {

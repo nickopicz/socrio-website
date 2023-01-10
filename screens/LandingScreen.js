@@ -16,177 +16,171 @@ export const LandingPage = ({ navigation }) => {
     );
   }
   return (
-    <View style={{ height: Dim.height * 2.3, width: Dim.width }}>
-      <ImageBackground
-        source={require("../assets/stars.gif")}
-        resizeMode="repeat"
-        style={{ height: Dim.height * 2.3, width: Dim.width }}
+    <View
+      style={{
+        backgroundColor: Colors.black,
+        flexDirection: "row",
+        width: "100%",
+        overflow: "hidden",
+        alignItems: "stretch",
+        height: 2000,
+      }}
+    >
+      <View
+        style={{
+          width: "30%",
+          // alignSelf: "flex-start",
+          flexDirection: "column",
+          backgroundColor: Colors.black,
+        }}
+      ></View>
+      <View
+        style={{
+          alignItems: "center",
+          width: "40%",
+          flexDirection: "column",
+          backgroundColor: Colors.black,
+        }}
       >
         <View
           style={{
-            height: Dim.height * 2.3,
-            width: Dim.width,
-            alignItems: "center",
             flexDirection: "row",
+            alignItems: "center",
+            height: "20%",
+            width: "60%",
+            justifyContent: "space-evenly",
           }}
         >
-          <LinearGradient
-            colors={[Colors.aegean, Colors.black]}
+          <Image
+            source={require("../assets/icon_socrio.png")}
+            resizeMethod="scale"
             style={{
-              width: Dim.width * 0.25,
-              height: Dim.height * 2.3,
-              opacity: 0.7,
+              height: 100,
+              width: 100,
+              opacity: 0.9,
+              borderRadius: 25,
             }}
-            start={{ x: 0, y: 1 }}
-          ></LinearGradient>
-
-          <View
+          />
+          <CustomText
             style={{
-              alignItems: "center",
-              width: Dim.width * 0.5,
-              height: Dim.height * 2.3,
-              backgroundColor: Colors.black,
-              opacity: 1,
+              position: "relative",
+              fontSize: 50,
+              textAlignVertical: "center",
             }}
+            aegean
           >
-            <View
-              style={{
-                alignItems: "center",
-                justifyContent: "center",
-                height: Dim.height * 0.15,
-                width: Dim.width * 0.25,
-              }}
-            >
-              <CustomText
-                style={{
-                  position: "relative",
-                  fontSize: 80,
-                }}
-                aegean
-              >
-                socrio
-              </CustomText>
-            </View>
-            <View
-              style={{
-                paddingTop: Dim.height * 0.2,
-                paddingBottom: Dim.height * 0.3,
-              }}
-            >
-              <RoundedButton
-                small
-                style={
-                  Dim.width < Dim.height
-                    ? {
-                        height: Dim.height * 0.075,
-                        width: Dim.width * 0.3,
-                        shadowColor: Colors.white,
-                        shadowOffset: {
-                          width: 0,
-                          height: 7,
-                        },
-                        shadowOpacity: 0.1,
-                      }
-                    : {
-                        height: Dim.height * 0.075,
-                        width: Dim.width * 0.125,
-                        shadowColor: Colors.white,
-                        shadowOffset: {
-                          width: 0,
-                          height: 7,
-                        },
-                        shadowOpacity: 0.1,
-                      }
-                }
-                onPress={() => handlePress()}
-              >
-                <CustomText black h4 style={{ position: "relative" }}>
-                  join
-                </CustomText>
-              </RoundedButton>
-            </View>
-            {/* <View
+            socrio
+          </CustomText>
+        </View>
+        <View
+          style={{
+            width: "50%",
+            height: "20%",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <RoundedButton
+            small
+            style={
+              Dim.width < Dim.height
+                ? {
+                    marginVertical: 50,
+                    height: 50,
+                    width: 150,
+                    shadowColor: Colors.white,
+                    shadowOffset: {
+                      width: 0,
+                      height: 7,
+                    },
+                    shadowOpacity: 0.1,
+                  }
+                : {
+                    marginVertical: 50,
+                    height: 50,
+                    width: 150,
+                    shadowColor: Colors.white,
+                    shadowOffset: {
+                      width: 0,
+                      height: 7,
+                    },
+                    shadowOpacity: 0.1,
+                  }
+            }
+            onPress={() => handlePress()}
+          >
+            <CustomText black h4 style={{ position: "relative" }}>
+              join
+            </CustomText>
+          </RoundedButton>
+        </View>
+        {/* <View
               style={{ height: 50, width: 160, backgroundColor: Colors.aegean }}
             > */}
-            <Image
-              source={require("../assets/app_store_apple.jpg")}
-              resizeMethod="auto"
-              style={{
-                height: 55,
-                width: 180,
-                opacity: 0.8,
-                borderRadius: 10,
-                borderWidth: 1,
-                borderColor: Colors.powder,
-                shadowColor: Colors.white,
-                shadowOffset: {
-                  width: 0,
-                  height: 10,
-                },
-                shadowOpacity: 0.2,
-              }}
-            />
-            {/* </View> */}
-            <View
-              style={{ alignItems: "center", paddingTop: Dim.height * 0.5 }}
-            >
-              <CardHolder
-                title={" \nMake friends"}
-                textContent={
-                  "\n Become a voice in your city, county, or state... and listen to interesting people! \n \n"
-                }
-              />
-            </View>
-            <View
-              style={
-                Dim.height >= Dim.width
-                  ? {
-                      alignSelf: "center",
-                      paddingTop: Dim.height * 0.1,
-                      paddingBottom: Dim.height * 0.05,
-                    }
-                  : {
-                      alignSelf: "center",
-                      paddingTop: Dim.height * 0.5,
-                      paddingBottom: Dim.height * 0.05,
-                    }
-              }
-            >
-              <CustomText p2 led style={{ textAlign: "center" }}>
-                email: info@socrio.net
-              </CustomText>
-            </View>
-          </View>
-          <LinearGradient
-            style={{
-              width: Dim.width * 0.25,
-              height: Dim.height * 2.3,
-              opacity: 0.7,
-            }}
-            colors={[Colors.aegean, Colors.black]}
-            start={{ x: 1, y: 1 }}
-          >
-            <View
-              style={{
-                alignSelf: "center",
-                alignItems: "center",
-                paddingTop: Dim.height * 0.75,
-                paddingRight: 10,
-              }}
-            >
-              <LottieView
-                autoPlay
-                loop
-                source={require("../assets/down.json")}
-                style={{
-                  height: 200,
-                  width: 140,
-                }}
-              />
-            </View>
-          </LinearGradient>
+        <Image
+          source={require("../assets/app_store_apple.jpg")}
+          resizeMethod="auto"
+          style={{
+            height: 55,
+            width: 180,
+            opacity: 0.8,
+            borderRadius: 10,
+            borderWidth: 1,
+            marginTop: "30%",
+            marginBottom: "15%",
+            borderColor: Colors.powder,
+            shadowColor: Colors.white,
+            shadowOffset: {
+              width: 0,
+              height: 10,
+            },
+            shadowOpacity: 0.2,
+          }}
+        />
+        {/* </View> */}
+        <View style={{ alignItems: "center" }}>
+          <CardHolder
+            title={" \nDiscover"}
+            textContent={
+              "\n Openly express ideas and advocate for change in your area! \n \n"
+            }
+          />
+          <CardHolder
+            title={" \nMake friends"}
+            textContent={
+              "\n Become a voice in your city, county, or state... and listen to interesting people... \n \n"
+            }
+          />
         </View>
-      </ImageBackground>
+        <View
+          style={{
+            alignSelf: "center",
+            marginTop: Dim.height < Dim.width ? "20%" : "100%",
+            backgroundColor: Colors.black,
+          }}
+        >
+          <CustomText p2 led style={{ textAlign: "center" }}>
+            info@socrio.net
+          </CustomText>
+        </View>
+      </View>
+      <View
+        style={{
+          width: "30%",
+        }}
+      >
+        <LottieView
+          autoPlay
+          loop
+          source={require("../assets/down.json")}
+          style={{
+            height: 200,
+            width: 140,
+            alignSelf: "center",
+            marginTop: Dim.height * 0.8,
+          }}
+        />
+      </View>
     </View>
   );
 };

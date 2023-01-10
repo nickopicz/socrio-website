@@ -29,9 +29,9 @@ export const CardHolder = ({ title, imageSource, textContent }) => {
           {title}
         </Text>
       </Card.Title>
-      <Card.Divider />
+      <Card.Divider color={Colors.led} />
       {imageSource && <Card.Image source={imageSource} />}
-      <Text p1 led style={{ marginBottom: 10, textAlign: "center" }}>
+      <Text p1 powder style={{ marginBottom: 10, textAlign: "center" }}>
         {textContent}
       </Text>
     </Card>
@@ -46,6 +46,7 @@ const styles = StyleSheet.create({
     borderColor: Colors.night,
     alignItems: "center",
     opacity: 0.8,
-    width: Dim.width * 0.5,
+    width: "90%",
+    marginVertical: "10%",
   },
 });
