@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useCallback, useState } from "react";
 import { View, Text, Image, ScrollView, ImageBackground } from "react-native";
 import { Colors, Dim } from "../Constants";
 import { useFonts } from "expo-font";
@@ -10,11 +10,53 @@ import { RoundedButton } from "../components/common/Button";
 import { CardHolder } from "../components/Card";
 
 export const LandingPage = ({ navigation }) => {
+  const [scrollY, setScrollY] = useState(Dim.height * 0.8);
+  const [transform, setTransform] = useState("90deg");
+
+  const scrollRef = useRef(null);
+  const bottomRef = useRef(null);
+
   function handlePress() {
     Linking.openURL(
       "https://docs.google.com/forms/d/e/1FAIpQLSe4Szo17_R3TWXCnpAtdYN2cnGpE_t4gCjgpWluKWBbX1UeMw/viewform?usp=sf_link"
     );
   }
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const handleScroll = () => {
+    let scrolled = Dim.height * 0.8 + window.scrollY;
+    setScrollY(scrolled);
+
+    if (scrolled >= 650) {
+      setTransform("180deg");
+    } else {
+      setTransform("90deg");
+    }
+    console.log("scrolled to : ", Dim.height * 0.8 + window.scrollY);
+  };
+
+  useEffect(() => {
+    console.log("\n bottom of the page pos: ");
+    bottomRef.current.measureInWindow((x, y, width, height) => {
+      console.log(" info at : ", y);
+    });
+    console.log(" \n scroll anim pos: ");
+
+    // scrollRef.current.
+    console.log("size of total page: ", Dim.height);
+    // scrollRef.current.measureInWindow((x, y, width, height) => {
+    //   console.log(
+    //     `Scroll is at: x: ${x}, y: ${y}, width: ${width}, height: ${height}`
+    //   );
+    // });
+  });
+
   return (
     <View
       style={{
@@ -153,6 +195,7 @@ export const LandingPage = ({ navigation }) => {
           />
         </View>
         <View
+          ref={bottomRef}
           style={{
             alignSelf: "center",
             marginTop: Dim.height < Dim.width ? "20%" : "100%",
@@ -169,17 +212,25 @@ export const LandingPage = ({ navigation }) => {
           width: "30%",
         }}
       >
-        <LottieView
-          autoPlay
-          loop
-          source={require("../assets/down.json")}
+        <View
           style={{
-            height: 200,
-            width: 140,
-            alignSelf: "center",
-            marginTop: Dim.height * 0.8,
+            marginTop: scrollY,
+            transform: [{ rotate: transform }],
           }}
-        />
+        >
+          <LottieView
+            autoPlay
+            loop
+            source={require("../assets/down.json")}
+            style={{
+              height: 200,
+              width: 140,
+              alignSelf: "center",
+              opacity: 0.2,
+            }}
+            ref={scrollRef}
+          />
+        </View>
       </View>
     </View>
   );
