@@ -10,7 +10,7 @@ import { RoundedButton } from "../components/common/Button";
 import { CardHolder } from "../components/Card";
 
 export const LandingPage = ({ navigation }) => {
-  const [scrollY, setScrollY] = useState(Dim.height * 0.8);
+  const [scrollY, setScrollY] = useState(Dim.height * 0.628);
   const [transform, setTransform] = useState("90deg");
 
   const scrollRef = useRef(null);
@@ -30,7 +30,7 @@ export const LandingPage = ({ navigation }) => {
   }, []);
 
   const handleScroll = () => {
-    let scrolled = Dim.height * 0.8 + window.scrollY;
+    let scrolled = Dim.height * 0.628 + window.scrollY;
     setScrollY(scrolled);
 
     if (scrolled >= 650) {
@@ -38,7 +38,7 @@ export const LandingPage = ({ navigation }) => {
     } else {
       setTransform("90deg");
     }
-    console.log("scrolled to : ", Dim.height * 0.8 + window.scrollY);
+    console.log("scrolled to : ", Dim.height * 0.628 + window.scrollY);
   };
 
   useEffect(() => {
