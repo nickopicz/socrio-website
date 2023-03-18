@@ -8,7 +8,6 @@
     "privacy" : "public",
     "backgroundColor": "#000000",
     "userInterfaceStyle": "dark",
-    "shortName": "SOCRIO",
     "description": "Socrio, the localized audio-based social media platform. Create, Connect, Communicate",
     "splash": {
       "image": "./assets/splash.png",

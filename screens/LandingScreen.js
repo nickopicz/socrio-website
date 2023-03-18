@@ -4,16 +4,11 @@ import { Colors, Dim } from "../Constants";
 import { useFonts } from "expo-font";
 import * as Linking from "expo-linking";
 import { LinearGradient } from "expo-linear-gradient";
-import LottieView from "lottie-react-native";
 import CustomText from "../components/common/Text";
 import { RoundedButton } from "../components/common/Button";
 import { CardHolder } from "../components/Card";
 
 export const LandingPage = ({ navigation }) => {
-  const [scrollY, setScrollY] = useState(Dim.height * 0.628);
-  const [transform, setTransform] = useState("90deg");
-
-  const scrollRef = useRef(null);
   const bottomRef = useRef(null);
 
   function handlePress() {
@@ -22,24 +17,28 @@ export const LandingPage = ({ navigation }) => {
     );
   }
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  function handleTester() {
+    Linking.openURL("https://testflight.apple.com/join/Cp3QDns3");
+  }
 
-  const handleScroll = () => {
-    let scrolled = Dim.height * 0.628 + window.scrollY;
-    setScrollY(scrolled);
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
-    if (scrolled >= 650) {
-      setTransform("180deg");
-    } else {
-      setTransform("90deg");
-    }
-    console.log("scrolled to : ", Dim.height * 0.628 + window.scrollY);
-  };
+  // const handleScroll = () => {
+  //   let scrolled = Dim.height * 0.628 + window.scrollY;
+  //   setScrollY(scrolled);
+
+  //   if (scrolled >= 650) {
+  //     setTransform("180deg");
+  //   } else {
+  //     setTransform("90deg");
+  //   }
+  //   console.log("scrolled to : ", Dim.height * 0.628 + window.scrollY);
+  // };
 
   useEffect(() => {
     console.log("\n bottom of the page pos: ");
@@ -60,28 +59,18 @@ export const LandingPage = ({ navigation }) => {
   return (
     <View
       style={{
-        backgroundColor: Colors.black,
-        flexDirection: "row",
+        backgroundColor: Colors.powder,
         width: "100%",
         overflow: "hidden",
-        alignItems: "stretch",
+        alignItems: "center",
         height: 2000,
       }}
     >
       <View
         style={{
-          width: "30%",
-          // alignSelf: "flex-start",
-          flexDirection: "column",
-          backgroundColor: Colors.black,
-        }}
-      ></View>
-      <View
-        style={{
           alignItems: "center",
           width: "40%",
           flexDirection: "column",
-          backgroundColor: Colors.black,
         }}
       >
         <View
@@ -107,11 +96,12 @@ export const LandingPage = ({ navigation }) => {
             style={{
               position: "relative",
               fontSize: 50,
+              fontWeight: "600",
               textAlignVertical: "center",
             }}
             aegean
           >
-            socrio
+            Socrio
           </CustomText>
         </View>
         <View
@@ -151,8 +141,44 @@ export const LandingPage = ({ navigation }) => {
             }
             onPress={() => handlePress()}
           >
-            <CustomText black h4 style={{ position: "relative" }}>
+            <CustomText powder h4 style={{ position: "relative" }}>
               join
+            </CustomText>
+          </RoundedButton>
+          <RoundedButton
+            small
+            style={
+              Dim.width < Dim.height
+                ? {
+                    backgroundColor: Colors.led,
+                    marginVertical: 50,
+                    height: 50,
+                    width: 300,
+                    shadowColor: Colors.white,
+                    shadowOffset: {
+                      width: 0,
+                      height: 7,
+                    },
+                    shadowOpacity: 0.1,
+                  }
+                : {
+                    backgroundColor: Colors.led,
+
+                    marginVertical: 50,
+                    height: 50,
+                    width: 300,
+                    shadowColor: Colors.white,
+                    shadowOffset: {
+                      width: 0,
+                      height: 7,
+                    },
+                    shadowOpacity: 0.1,
+                  }
+            }
+            onPress={() => handleTester()}
+          >
+            <CustomText dusk p1 style={{ position: "relative" }}>
+              Beta Test for iOS
             </CustomText>
           </RoundedButton>
         </View>
@@ -183,15 +209,11 @@ export const LandingPage = ({ navigation }) => {
         <View style={{ alignItems: "center" }}>
           <CardHolder
             title={" \nDiscover"}
-            textContent={
-              "\n Openly express ideas and advocate for change in your area! \n \n"
-            }
+            textContent={"\n Use your voice to express ideas ! \n \n"}
           />
           <CardHolder
-            title={" \nMake friends"}
-            textContent={
-              "\n Become a voice in your city, county, or state... and listen to interesting people... \n \n"
-            }
+            title={" \n Start Now! "}
+            textContent={"\n Become a voice in your community! \n \n"}
           />
         </View>
         <View
@@ -199,37 +221,18 @@ export const LandingPage = ({ navigation }) => {
           style={{
             alignSelf: "center",
             marginTop: Dim.height < Dim.width ? "20%" : "100%",
-            backgroundColor: Colors.black,
+            borderColor: Colors.dusk,
+            borderWidth: 1,
+            backgroundColor: Colors.led,
+            borderRadius: 10,
+            height: "3%",
+            width: "30%",
+            justifyContent: "center",
           }}
         >
-          <CustomText p2 led style={{ textAlign: "center" }}>
+          <CustomText p2 dusk style={{ textAlign: "center" }}>
             info@socrio.net
           </CustomText>
-        </View>
-      </View>
-      <View
-        style={{
-          width: "30%",
-        }}
-      >
-        <View
-          style={{
-            marginTop: scrollY,
-            transform: [{ rotate: transform }],
-          }}
-        >
-          <LottieView
-            autoPlay
-            loop
-            source={require("../assets/down.json")}
-            style={{
-              height: 200,
-              width: 140,
-              alignSelf: "center",
-              opacity: 0.2,
-            }}
-            ref={scrollRef}
-          />
         </View>
       </View>
     </View>

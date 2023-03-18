@@ -14,7 +14,6 @@ import React from "react";
 import { TouchableOpacity, View } from "react-native";
 import { Colors, Dim, Font } from "../../Constants";
 import Text from "./Text";
-import LottieView from "lottie-react-native";
 
 /**
  * @props disabled bool value for disabling button
@@ -54,19 +53,11 @@ export const RoundedButton = React.forwardRef((props, ref) => {
         paddingHorizontal: 10,
         paddingVertical: 7.5,
         borderRadius: 18,
+        borderWidth: 2,
+        borderColor: Colors.dusk,
         ...props.style,
       }}
     >
-      <LottieView
-        source={require("../../assets/tap.json")}
-        resizeMode="contain"
-        autoPlay
-        loop={true}
-        style={{
-          height: "400%",
-          width: "200%",
-        }}
-      />
       <Text
         p1
         white

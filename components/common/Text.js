@@ -79,6 +79,8 @@ const CustomText = (props) => {
     color = Colors.clay;
   } else if (props.dryBlood) {
     color = Colors.dryBlood;
+  } else if (props.powder) {
+    color = Colors.powder;
   }
 
   return (

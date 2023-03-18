@@ -25,13 +25,13 @@ export const CardHolder = ({ title, imageSource, textContent }) => {
   return (
     <Card containerStyle={styles.border}>
       <Card.Title>
-        <Text h4 u led>
+        <Text h4 u dusk>
           {title}
         </Text>
       </Card.Title>
       <Card.Divider color={Colors.led} />
       {imageSource && <Card.Image source={imageSource} />}
-      <Text p1 powder style={{ marginBottom: 10, textAlign: "center" }}>
+      <Text p1 dusk style={{ marginBottom: 10, textAlign: "center" }}>
         {textContent}
       </Text>
     </Card>
@@ -40,9 +40,9 @@ export const CardHolder = ({ title, imageSource, textContent }) => {
 
 const styles = StyleSheet.create({
   border: {
-    backgroundColor: Colors.night,
+    backgroundColor: Colors.led,
     borderRadius: 10,
-    borderWidth: 1,
+    borderWidth: 2,
     borderColor: Colors.night,
     alignItems: "center",
     opacity: 0.8,
