@@ -225,8 +225,8 @@ export const LandingPage = ({ navigation }) => {
             borderWidth: 1,
             backgroundColor: Colors.led,
             borderRadius: 10,
-            height: "3%",
-            width: "30%",
+            height: 50,
+            width: 160,
             justifyContent: "center",
           }}
         >
