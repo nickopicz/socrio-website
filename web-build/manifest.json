@@ -1,0 +1,10 @@
+{
+  "background_color": "#000000",
+  "description": "Socrio, the localized audio-based social media platform. Create, Connect, Communicate",
+  "display": "standalone",
+  "lang": "en",
+  "name": "socrio",
+  "short_name": "socrio",
+  "start_url": "/?utm_source=web_app_manifest",
+  "orientation": "portrait"
+}
