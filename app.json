@@ -5,7 +5,7 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "privacy" : "public",
+    "privacy": "public",
     "backgroundColor": "#000000",
     "userInterfaceStyle": "dark",
     "description": "Socrio, the localized audio-based social media platform. Create, Connect, Communicate",
@@ -17,9 +17,7 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
@@ -33,7 +31,10 @@
       "favicon": "./assets/public/mini_icon.png",
       "backgroundColor": "#000000",
       "barStyle": "black",
-      "name": "socrio"
+      "name": "socrio",
+      "build": {
+        "publicPath": "/"
+      }
     }
   }
 }
