@@ -44,7 +44,7 @@ export const LandingPage = ({ navigation }) => {
 				width: '100%',
 				overflow: 'hidden',
 				alignItems: 'center',
-				height: 2000,
+				height: 2250,
 			}}
 		>
 			<View
@@ -83,6 +83,27 @@ export const LandingPage = ({ navigation }) => {
 						Contrast
 					>
 						Socrio
+					</CustomText>
+				</View>
+				<View
+					style={{
+						width: '60%',
+						height: '20%',
+						alignItems: 'center',
+						justifyContent: 'center',
+						textAlign: 'center',
+					}}
+				>
+					<CustomText
+						style={{
+							position: 'relative',
+							fontSize: 50,
+							fontWeight: '700',
+							textAlignVertical: 'center',
+						}}
+						Contrast
+					>
+						{'Voice your ideas,\n ignite connections.'}
 					</CustomText>
 				</View>
 				<View
