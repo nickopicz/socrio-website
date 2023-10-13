@@ -119,41 +119,15 @@ export const LandingPage = ({ navigation }) => {
 						style={
 							Dim.width < Dim.height
 								? {
-										marginVertical: 50,
-										height: 50,
-										width: 150,
-								  }
-								: {
-										marginVertical: 50,
-										height: 50,
-										width: 150,
-								  }
-						}
-						onPress={() => handlePress()}
-					>
-						<CustomText
-							Background
-							p1
-							u
-							style={{ position: 'relative' }}
-						>
-							Join
-						</CustomText>
-					</RoundedButton>
-					<RoundedButton
-						small
-						style={
-							Dim.width < Dim.height
-								? {
 										backgroundColor: Colors.Contrast,
-										marginVertical: 50,
+										marginVertical: 25,
 										height: 50,
 										width: 300,
 								  }
 								: {
 										backgroundColor: Colors.Contrast,
 
-										marginVertical: 50,
+										marginVertical: 25,
 										height: 50,
 										width: 300,
 								  }
@@ -167,6 +141,32 @@ export const LandingPage = ({ navigation }) => {
 							style={{ position: 'relative' }}
 						>
 							Beta Test for iOS
+						</CustomText>
+					</RoundedButton>
+					<RoundedButton
+						small
+						style={
+							Dim.width < Dim.height
+								? {
+										marginVertical: 30,
+										height: 50,
+										width: 150,
+								  }
+								: {
+										marginVertical: 30,
+										height: 50,
+										width: 150,
+								  }
+						}
+						onPress={() => handlePress()}
+					>
+						<CustomText
+							Background
+							p1
+							u
+							style={{ position: 'relative' }}
+						>
+							Join
 						</CustomText>
 					</RoundedButton>
 				</View>
