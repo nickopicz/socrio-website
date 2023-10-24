@@ -7,8 +7,9 @@ import { LinearGradient } from 'expo-linear-gradient';
 import CustomText from '../components/common/Text';
 import { RoundedButton } from '../components/common/Button';
 import { CardHolder } from '../components/Card';
+import { BottomTabBar } from '../components/BottomTabs';
 
-export const LandingPage = ({ navigation }) => {
+export const LandingPage = ({ navigation, render, setRender }) => {
 	const bottomRef = useRef(null);
 
 	function handlePress() {
@@ -22,14 +23,24 @@ export const LandingPage = ({ navigation }) => {
 	}
 
 	useEffect(() => {
-		console.log('\n bottom of the page pos: ');
+		function handleResize() {
+			console.log('resized window');
+			setRender(render + 1);
+		}
+
+		// Add resize event listener
+		window.addEventListener('resize', handleResize);
+
+		// Clean up the event listener on component unmount
+		return () => window.removeEventListener('resize', handleResize);
+	}, []);
+
+	useEffect(() => {
 		bottomRef.current.measureInWindow((x, y, width, height) => {
 			console.log(' info at : ', y);
 		});
-		console.log(' \n scroll anim pos: ');
 
 		// scrollRef.current.
-		console.log('size of total page: ', Dim.height);
 		// scrollRef.current.measureInWindow((x, y, width, height) => {
 		//   console.log(
 		//     `Scroll is at: x: ${x}, y: ${y}, width: ${width}, height: ${height}`
@@ -44,14 +55,15 @@ export const LandingPage = ({ navigation }) => {
 				width: '100%',
 				overflow: 'hidden',
 				alignItems: 'center',
-				height: 2250,
+				flex: 1,
 			}}
 		>
 			<View
 				style={{
 					alignItems: 'center',
-					width: '40%',
+					width: Dim.width > Dim.height ? '40%' : '70%',
 					flexDirection: 'column',
+					flex: 1,
 				}}
 			>
 				<View
@@ -77,7 +89,7 @@ export const LandingPage = ({ navigation }) => {
 						style={{
 							position: 'relative',
 							fontSize: 70,
-							fontWeight: '700',
+							fontWeight: '600',
 							textAlignVertical: 'center',
 						}}
 						Contrast
@@ -89,6 +101,7 @@ export const LandingPage = ({ navigation }) => {
 					style={{
 						width: '60%',
 						height: '20%',
+						marginVertical: Dim.width > Dim.height ? '5%' : '10%',
 						alignItems: 'center',
 						justifyContent: 'center',
 						textAlign: 'center',
@@ -98,7 +111,7 @@ export const LandingPage = ({ navigation }) => {
 						style={{
 							position: 'relative',
 							fontSize: 50,
-							fontWeight: '700',
+							fontWeight: '500',
 							textAlignVertical: 'center',
 						}}
 						Contrast
@@ -108,30 +121,22 @@ export const LandingPage = ({ navigation }) => {
 				</View>
 				<View
 					style={{
-						width: '50%',
+						width: '80%',
 						height: '20%',
 						alignItems: 'center',
-						justifyContent: 'center',
+						justifyContent:
+							Dim.width > Dim.height ? 'space-between' : 'space-evenly',
+						marginVertical: '5%',
+						flexDirection: Dim.width > Dim.height ? 'row' : 'column',
 					}}
 				>
 					<RoundedButton
 						small
-						style={
-							Dim.width < Dim.height
-								? {
-										backgroundColor: Colors.Contrast,
-										marginVertical: 25,
-										height: 50,
-										width: 300,
-								  }
-								: {
-										backgroundColor: Colors.Contrast,
-
-										marginVertical: 25,
-										height: 50,
-										width: 300,
-								  }
-						}
+						style={{
+							backgroundColor: Colors.Contrast,
+							height: 50,
+							width: 300,
+						}}
 						onPress={() => handleTester()}
 					>
 						<CustomText
@@ -140,24 +145,15 @@ export const LandingPage = ({ navigation }) => {
 							p1
 							style={{ position: 'relative' }}
 						>
-							Beta Test for iOS
+							Beta Test (iOS)
 						</CustomText>
 					</RoundedButton>
 					<RoundedButton
 						small
-						style={
-							Dim.width < Dim.height
-								? {
-										marginVertical: 30,
-										height: 50,
-										width: 150,
-								  }
-								: {
-										marginVertical: 30,
-										height: 50,
-										width: 150,
-								  }
-						}
+						style={{
+							height: 50,
+							width: 300,
+						}}
 						onPress={() => handlePress()}
 					>
 						<CustomText
@@ -166,7 +162,7 @@ export const LandingPage = ({ navigation }) => {
 							u
 							style={{ position: 'relative' }}
 						>
-							Join
+							Subscribe
 						</CustomText>
 					</RoundedButton>
 				</View>
@@ -182,27 +178,15 @@ export const LandingPage = ({ navigation }) => {
 						opacity: 0.8,
 						borderRadius: 10,
 						borderWidth: 0,
-						marginTop: '20%',
-						marginBottom: '15%',
+						marginVertical: '5%',
 						borderColor: Colors.BlueWhite,
 					}}
 				/>
-				{/* </View> */}
-				<View style={{ alignItems: 'center' }}>
-					<CardHolder
-						title={' \nDiscover'}
-						textContent={'\n Use your voice to express ideas ! \n \n'}
-					/>
-					<CardHolder
-						title={' \n Start Now! '}
-						textContent={'\n Become a voice in your community! \n \n'}
-					/>
-				</View>
+
 				<View
 					ref={bottomRef}
 					style={{
 						alignSelf: 'center',
-						marginTop: Dim.height < Dim.width ? '20%' : '100%',
 						borderColor: Colors.Navbar,
 						borderWidth: 0,
 						backgroundColor: Colors.Foreground,
@@ -221,6 +205,7 @@ export const LandingPage = ({ navigation }) => {
 					</CustomText>
 				</View>
 			</View>
+			<BottomTabBar />
 		</View>
 	);
 };

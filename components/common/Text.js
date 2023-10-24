@@ -73,8 +73,8 @@ const CustomText = (props) => {
 		color = Colors.Contrast;
 	} else if (props.Light) {
 		color = Colors.Light;
-	} else if (props.BlueWhite) {
-		color = Colors.BlueWhite;
+	} else if (props.Contrast) {
+		color = Colors.Contrast;
 	} else if (props.Record) {
 		color = Colors.Record;
 	} else if (props.Earth) {
