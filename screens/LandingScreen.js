@@ -56,6 +56,7 @@ export const LandingPage = ({ navigation, render, setRender }) => {
 				overflow: 'hidden',
 				alignItems: 'center',
 				flex: 1,
+				flexGrow: 10,
 			}}
 		>
 			<View
@@ -64,6 +65,7 @@ export const LandingPage = ({ navigation, render, setRender }) => {
 					width: Dim.width > Dim.height ? '40%' : '70%',
 					flexDirection: 'column',
 					flex: 1,
+					justifyContent: 'space-between',
 				}}
 			>
 				<View
@@ -110,9 +112,10 @@ export const LandingPage = ({ navigation, render, setRender }) => {
 					<CustomText
 						style={{
 							position: 'relative',
-							fontSize: 50,
+							fontSize: Dim.width > Dim.height ? 50 : 25,
 							fontWeight: '500',
 							textAlignVertical: 'center',
+							marginVertical: Dim.width > Dim.height ? '10%' : '5%',
 						}}
 						Contrast
 					>
@@ -121,12 +124,11 @@ export const LandingPage = ({ navigation, render, setRender }) => {
 				</View>
 				<View
 					style={{
-						width: '80%',
+						width: '100%',
 						height: '20%',
 						alignItems: 'center',
 						justifyContent:
 							Dim.width > Dim.height ? 'space-between' : 'space-evenly',
-						marginVertical: '5%',
 						flexDirection: Dim.width > Dim.height ? 'row' : 'column',
 					}}
 				>
@@ -135,7 +137,7 @@ export const LandingPage = ({ navigation, render, setRender }) => {
 						style={{
 							backgroundColor: Colors.Contrast,
 							height: 50,
-							width: 300,
+							width: 250,
 						}}
 						onPress={() => handleTester()}
 					>
@@ -152,7 +154,7 @@ export const LandingPage = ({ navigation, render, setRender }) => {
 						small
 						style={{
 							height: 50,
-							width: 300,
+							width: 250,
 						}}
 						onPress={() => handlePress()}
 					>
@@ -178,8 +180,9 @@ export const LandingPage = ({ navigation, render, setRender }) => {
 						opacity: 0.8,
 						borderRadius: 10,
 						borderWidth: 0,
-						marginVertical: '5%',
+						// marginVertical: '5%',
 						borderColor: Colors.BlueWhite,
+						marginTop: '5%',
 					}}
 				/>
 
@@ -187,6 +190,7 @@ export const LandingPage = ({ navigation, render, setRender }) => {
 					ref={bottomRef}
 					style={{
 						alignSelf: 'center',
+						// marginVertical: '10%',
 						borderColor: Colors.Navbar,
 						borderWidth: 0,
 						backgroundColor: Colors.Foreground,
@@ -194,6 +198,7 @@ export const LandingPage = ({ navigation, render, setRender }) => {
 						height: 50,
 						width: 160,
 						justifyContent: 'center',
+						marginVertical: Dim.width > Dim.height ? '10%' : '5%',
 					}}
 				>
 					<CustomText
