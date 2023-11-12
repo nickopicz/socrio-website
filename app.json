@@ -28,7 +28,7 @@
 			}
 		},
 		"web": {
-			"favicon": "./assets/public/favicon.ico",
+			"favicon": "./assets/public/mini_icon.png",
 			"backgroundColor": "#000000",
 			"barStyle": "black",
 			"name": "socrio"
