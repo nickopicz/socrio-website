@@ -1,37 +1,37 @@
 {
-  "expo": {
-    "name": "socrio",
-    "slug": "socrio",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "privacy": "public",
-    "backgroundColor": "#000000",
-    "userInterfaceStyle": "dark",
-    "description": "Socrio, the localized audio-based social media platform. Create, Connect, Communicate",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#87CEFA"
-    },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "assetBundlePatterns": ["**/*"],
-    "ios": {
-      "supportsTablet": true
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      }
-    },
-    "web": {
-      "favicon": "./assets/public/mini_icon.png",
-      "backgroundColor": "#000000",
-      "barStyle": "black",
-      "name": "socrio"
-    }
-  }
+	"expo": {
+		"name": "socrio",
+		"slug": "socrio",
+		"version": "1.0.0",
+		"orientation": "portrait",
+		"icon": "./assets/icon.png",
+		"privacy": "public",
+		"backgroundColor": "#000000",
+		"userInterfaceStyle": "dark",
+		"description": "Socrio, the localized audio-based social media platform. Create, Connect, Communicate",
+		"splash": {
+			"image": "./assets/splash.png",
+			"resizeMode": "contain",
+			"backgroundColor": "#87CEFA"
+		},
+		"updates": {
+			"fallbackToCacheTimeout": 0
+		},
+		"assetBundlePatterns": ["**/*"],
+		"ios": {
+			"supportsTablet": true
+		},
+		"android": {
+			"adaptiveIcon": {
+				"foregroundImage": "./assets/adaptive-icon.png",
+				"backgroundColor": "#FFFFFF"
+			}
+		},
+		"web": {
+			"favicon": "./assets/public/favicon.ico",
+			"backgroundColor": "#000000",
+			"barStyle": "black",
+			"name": "socrio"
+		}
+	}
 }

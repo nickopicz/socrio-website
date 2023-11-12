@@ -1,5 +1,12 @@
 import React, { useEffect, useRef, useCallback, useState } from 'react';
-import { View, Text, Image, ScrollView, ImageBackground } from 'react-native';
+import {
+	View,
+	Text,
+	Image,
+	ScrollView,
+	ImageBackground,
+	TouchableOpacity,
+} from 'react-native';
 import { Colors, Dim } from '../Constants';
 import { useFonts } from 'expo-font';
 import * as Linking from 'expo-linking';
@@ -55,7 +62,7 @@ export const LandingPage = ({ navigation, render, setRender }) => {
 				width: '100%',
 				overflow: 'hidden',
 				alignItems: 'center',
-				flex: 1,
+				flex: 1.5,
 				flexGrow: 10,
 			}}
 		>
@@ -68,38 +75,18 @@ export const LandingPage = ({ navigation, render, setRender }) => {
 					justifyContent: 'space-between',
 				}}
 			>
-				<View
+				<Image
+					source={require('../assets/icon_socrio.png')}
+					resizeMethod="scale"
 					style={{
-						flexDirection: 'row',
-						alignItems: 'center',
-						height: '20%',
-						width: '60%',
-						justifyContent: 'space-evenly',
+						height: 150,
+						width: 150,
+						opacity: 0.9,
+						borderRadius: 30,
+						marginVertical: 20,
 					}}
-				>
-					<Image
-						source={require('../assets/icon_socrio.png')}
-						resizeMethod="scale"
-						style={{
-							height: 100,
-							width: 100,
-							opacity: 0.9,
-							borderRadius: 25,
-						}}
-					/>
-					<CustomText
-						style={{
-							position: 'relative',
-							fontSize: 70,
-							fontWeight: '600',
-							textAlignVertical: 'center',
-						}}
-						Contrast
-					>
-						Socrio
-					</CustomText>
-				</View>
-				<View
+				/>
+				{/* <View
 					style={{
 						width: '60%',
 						height: '20%',
@@ -108,27 +95,29 @@ export const LandingPage = ({ navigation, render, setRender }) => {
 						justifyContent: 'center',
 						textAlign: 'center',
 					}}
+				> */}
+				<CustomText
+					style={{
+						position: 'relative',
+						fontSize: Dim.width > Dim.height ? 40 : 25,
+						fontWeight: '500',
+						textAlignVertical: 'center',
+						marginVertical: Dim.width > Dim.height ? '5%' : '5%',
+						textAlign: 'center',
+					}}
+					Contrast
 				>
-					<CustomText
-						style={{
-							position: 'relative',
-							fontSize: Dim.width > Dim.height ? 50 : 25,
-							fontWeight: '500',
-							textAlignVertical: 'center',
-							marginVertical: Dim.width > Dim.height ? '10%' : '5%',
-						}}
-						Contrast
-					>
-						{'Voice your ideas,\n ignite connections.'}
-					</CustomText>
-				</View>
+					{'Voice your ideas,\n ignite connections.'}
+				</CustomText>
+				{/* </View> */}
 				<View
 					style={{
 						width: '100%',
 						height: '20%',
 						alignItems: 'center',
+						alignSelf: 'center',
 						justifyContent:
-							Dim.width > Dim.height ? 'space-between' : 'space-evenly',
+							Dim.width > Dim.height ? 'space-evenly' : 'space-evenly',
 						flexDirection: Dim.width > Dim.height ? 'row' : 'column',
 					}}
 				>
@@ -171,21 +160,28 @@ export const LandingPage = ({ navigation, render, setRender }) => {
 				{/* <View
               style={{ height: 50, width: 160, backgroundColor: Colors.Contrast }}
             > */}
-				<Image
-					source={require('../assets/app_store_apple.jpg')}
-					resizeMethod="auto"
-					style={{
-						height: 75,
-						width: 240,
-						opacity: 0.8,
-						borderRadius: 10,
-						borderWidth: 0,
-						// marginVertical: '5%',
-						borderColor: Colors.BlueWhite,
-						marginTop: '5%',
+				<TouchableOpacity
+					onPress={() => {
+						Linking.openURL(
+							'https://apps.apple.com/us/app/socrio/id1668562651'
+						);
 					}}
-				/>
-
+				>
+					<Image
+						source={require('../assets/download_now.png')}
+						resizeMethod="auto"
+						style={{
+							height: 75,
+							width: 240,
+							opacity: 0.8,
+							borderRadius: 10,
+							borderWidth: 0,
+							// marginVertical: '5%',
+							borderColor: Colors.BlueWhite,
+							marginTop: '5%',
+						}}
+					/>
+				</TouchableOpacity>
 				<View
 					ref={bottomRef}
 					style={{
@@ -198,7 +194,7 @@ export const LandingPage = ({ navigation, render, setRender }) => {
 						height: 50,
 						width: 160,
 						justifyContent: 'center',
-						marginVertical: Dim.width > Dim.height ? '10%' : '5%',
+						marginVertical: '5%',
 					}}
 				>
 					<CustomText
