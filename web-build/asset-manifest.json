@@ -1,11 +1,12 @@
 {
   "files": {
-    "main.js": "/static/js/main.cbc5d590.js",
-    "static/js/692.7d58b3ed.js": "/static/js/692.7d58b3ed.js",
+    "main.js": "/static/js/main.1aa2d409.js",
+    "static/js/796.9c2fe032.js": "/static/js/796.9c2fe032.js",
     "static/media/MaterialCommunityIcons.ttf": "/static/media/MaterialCommunityIcons.5d42b4e60858731e7b65.ttf",
     "static/media/Fontisto.ttf": "/static/media/Fontisto.c0edd68811e0237502fe.ttf",
     "static/media/Ionicons.ttf": "/static/media/Ionicons.3517aeaa34b2f8cd8eef.ttf",
     "static/media/MaterialIcons.ttf": "/static/media/MaterialIcons.120b4c7bbd155bd0a04d.ttf",
+    "static/media/icon_socrio.png": "/static/media/icon_socrio.d023155dd8f27b121715.png",
     "static/media/FontAwesome5_Solid.ttf": "/static/media/FontAwesome5_Solid.07c3313b24f7b1ca85ee.ttf",
     "static/media/Overpass-Regular.ttf": "/static/media/Overpass-Regular.6bc712f590eef4f9937f.ttf",
     "static/media/FontAwesome.ttf": "/static/media/FontAwesome.1e59d2330b4c6deb84b3.ttf",
@@ -17,25 +18,24 @@
     "static/media/SimpleLineIcons.ttf": "/static/media/SimpleLineIcons.3ec13a24af3fdda11107.ttf",
     "static/media/Octicons.ttf": "/static/media/Octicons.6b742a230954dc640ba2.ttf",
     "static/media/FontAwesome5_Regular.ttf": "/static/media/FontAwesome5_Regular.1017bce89c72f95bcf8e.ttf",
-    "static/media/app_store_apple.jpg": "/static/media/app_store_apple.bdcacf6a71b1caecdcc3.jpg",
+    "static/media/download_now.png": "/static/media/download_now.85a851125394e567cb2c.png",
     "static/media/Zocial.ttf": "/static/media/Zocial.07fea2ac49bcc67d9a6b.ttf",
     "favicon.ico": "/favicon.ico",
-    "static/media/icon_socrio.png": "/static/media/icon_socrio.02224af0e153c06bd904.png",
     "static/media/EvilIcons.ttf": "/static/media/EvilIcons.699664b33ac2837d5bee.ttf",
     "index.html": "/index.html",
     "static/media/rocket.png": "/static/media/rocket.d2f3bf41d5e4515c39a9.png",
     "static/media/bell.png": "/static/media/bell.cf04af27d6a651c4b904.png",
+    "favicon-32.png": "/favicon-32.png",
     "static/media/star.png": "/static/media/star.69c7138684828d68fe5a.png",
     "static/media/heart.png": "/static/media/heart.23b5c2c0eb77d50ff1b4.png",
-    "favicon-32.png": "/favicon-32.png",
     "favicon-16.png": "/favicon-16.png",
     "manifest.json": "/manifest.json",
     "serve.json": "/serve.json",
-    "main.cbc5d590.js.map": "/static/js/main.cbc5d590.js.map",
-    "692.7d58b3ed.js.map": "/static/js/692.7d58b3ed.js.map"
+    "main.1aa2d409.js.map": "/static/js/main.1aa2d409.js.map",
+    "796.9c2fe032.js.map": "/static/js/796.9c2fe032.js.map"
   },
   "entrypoints": [
-    "static/js/692.7d58b3ed.js",
-    "static/js/main.cbc5d590.js"
+    "static/js/796.9c2fe032.js",
+    "static/js/main.1aa2d409.js"
   ]
 }

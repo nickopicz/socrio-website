@@ -110,7 +110,7 @@ export const LandingPage = ({ navigation, render, setRender }) => {
 					{'Voice your ideas,\n ignite connections.'}
 				</CustomText>
 				{/* </View> */}
-				<View
+				{/* <View
 					style={{
 						width: '100%',
 						height: '20%',
@@ -120,8 +120,8 @@ export const LandingPage = ({ navigation, render, setRender }) => {
 							Dim.width > Dim.height ? 'space-evenly' : 'space-evenly',
 						flexDirection: Dim.width > Dim.height ? 'row' : 'column',
 					}}
-				>
-					<RoundedButton
+				> */}
+				{/* <RoundedButton
 						small
 						style={{
 							backgroundColor: Colors.Contrast,
@@ -155,8 +155,8 @@ export const LandingPage = ({ navigation, render, setRender }) => {
 						>
 							Subscribe
 						</CustomText>
-					</RoundedButton>
-				</View>
+					</RoundedButton> */}
+				{/* </View> */}
 				{/* <View
               style={{ height: 50, width: 160, backgroundColor: Colors.Contrast }}
             > */}
